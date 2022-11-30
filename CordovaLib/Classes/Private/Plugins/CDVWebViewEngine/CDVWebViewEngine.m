@@ -72,6 +72,7 @@
 - (WKWebViewConfiguration*) createConfigurationFromSettings:(NSDictionary*)settings
 {
     WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];
+    [configuration setValue:@"TRUE" forKey:@"allowUniversalAccessFromFileURLs"];
     configuration.processPool = [[CDVWebViewProcessPoolFactory sharedFactory] sharedProcessPool];
     if (settings == nil) {
         return configuration;
